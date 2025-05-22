@@ -62,6 +62,10 @@ for (let i = 0; i < 20; i++) {
     dy: (Math.random() - 0.75) * 0.75,
   });
 
+  img.addEventListener('dragstart', (e) => {
+    e.preventDefault();
+  });
+
   img.addEventListener('click', () => {
     const skin = floatingImages.find(s => s.el === img);
     if (skin) {
