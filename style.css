@@ -247,10 +247,10 @@
 }
 
 .stat-number {
-  font-size: 3em;
+  color: hotpink !important;
+  font-size: 2.5em;
   font-weight: bold;
-  color: hotpink;
-  text-shadow: 2px 2px 5px black;
+  text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
 }
 
 .stat-label {
