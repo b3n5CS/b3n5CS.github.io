@@ -256,8 +256,8 @@
 }
 
 .stat-number {
-  color: hotpink;
-  text-shadow: 2px 2px 5px black;
+  color: hotpink !important;
+  text-shadow: 2px 2px 5px black !important;
   font-size: 3em;
   font-weight: bold;
 }
