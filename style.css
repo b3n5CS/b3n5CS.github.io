@@ -258,3 +258,22 @@
   font-size: 1.2em;
   margin-top: 5px;
 }
+
+.trustpilot-button {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.trustpilot-logo {
+  width: 150px;
+  height: auto;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  cursor: pointer;
+}
+
+.trustpilot-logo:hover {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 10px hotpink) brightness(1.2);
+}
+
