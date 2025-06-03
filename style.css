@@ -266,8 +266,8 @@
 }
 
 .trustpilot-logo {
-  width: 500px;
-  height: 500px;
+  width: 200px;
+  height: auto;
   transition: transform 0.3s ease, filter 0.3s ease;
   cursor: pointer;
 }
