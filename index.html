@@ -1,238 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>b3n5 Trading</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <!-- FAQ Sidebar -->
-  <div class="faq-sidebar">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <button class="faq-question">Is b3n5 Trading legit?</button>
-      <div class="faq-answer">
-        <p>Absolutely! I've completed thousands of trades with verified feedback and a solid reputation across platforms like Steam, CSGOrep, and Trustpilot.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">How do I sell my skins?</button>
-      <div class="faq-answer">
-        <p>Send me a message on Twitter, Steam or Discord. Simple as well as fast responses.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">What payment methods do you support?</button>
-      <div class="faq-answer">
-        <p>Almost every payment method. Instant Bank transfer, Crypto etc. Depending on your location.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Is there a minimum value for selling?</button>
-      <div class="faq-answer">
-        <p>I prefer trades above 20 USD, but feel free to message me about anything!</p>
-      </div>
-    </div>
+  <div id="floating-skins"></div>
+
+  <h1>b3n5 Trading</h1>
+  <p>Buying skins at good rates with most payment methods!</p>
+
+  <!-- Social Media Icons -->
+  <div class="social-icons">
+    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter"
+        class="icon-button"></a>
+    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam"
+        class="icon-button"></a>
+    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep"
+        class="icon-button"></a>
+    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord"
+        class="icon-button"></a>
+    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat"
+        class="icon-button"></a>
+  <!-- </div> Current Available Items Button 
+  <div style="margin-top: 20px;">
+    <a href="skins.html" class="button">Current Available Items</a> -->
   </div>
 
-  <!-- Main Content -->
-  <div class="main-content">
-    <div id="floating-skins"></div>
-
-    <h1>b3n5 Trading</h1>
-    <p>Buying skins at good rates with most payment methods!</p>
-
-    <!-- Social Media Icons -->
-    <div class="social-icons">
-      <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button" /></a>
-      <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button" /></a>
-      <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button" /></a>
-      <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button" /></a>
-      <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat" class="icon-button" /></a>
-    </div>
-
-    <!-- Inventory Section -->
-    <div id="inventory">
-      <div id="inventory-items"></div>
-    </div>
-
-    <!-- Reviews Section -->
-    <div class="reviews-wrapper">
-      <div class="review-text" id="reviewText"></div>
-    </div>
-
-    <!-- Stats Section -->
-    <div class="stats-container">
-      <div class="stat-box">
-        <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
-        <div class="stat-label">In deals</div>
-      </div>
-      <div class="stat-box">
-        <div class="stat-number" data-target="2000" data-prefix="+">0</div>
-        <div class="stat-label">Trades completed</div>
-      </div>
-    </div>
-
-    <!-- Trustpilot -->
-    <div class="trustpilot-button">
-      <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
-        <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo" />
-      </a>
-    </div>
+  <!-- Inventory Section -->
+  <div id="inventory">
+    <div id="inventory-items"></div>
   </div>
 
-  <!-- JS and Styles -->
+  <!-- Reviews Section -->
+  <div class="reviews-wrapper">
+    <div class="review-text" id="reviewText"></div>
+  </div>
+
   <script src="script.js"></script>
 
-  <style>
-    body {
-      display: flex;
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background: #0d0d0d;
-    }
+  <!-- Stats Section -->
+<div class="stats-container">
+  <div class="stat-box">
+    <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
+    <div class="stat-label">In deals</div>
+  </div>
+  <div class="stat-box">
+    <div class="stat-number" data-target="2000" data-prefix="+">0</div>
+    <div class="stat-label">Trades completed</div>
+  </div>
+</div>
 
-    .faq-sidebar {
-      width: 300px;
-      height: 100vh;
-      overflow-y: auto;
-      padding: 20px;
-      background-color: #111;
-      color: white;
-      position: fixed;
-      left: 0;
-      top: 0;
-      z-index: 10;
-      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
-    }
+  <div class="trustpilot-button">
+  <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
+    <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
+  </a>
+</div>
+  
+<style>
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
 
-    .faq-sidebar h2 {
-      font-size: 1.5em;
-      margin-bottom: 20px;
-    }
+  .stat-box {
+    padding: 10px 20px;
+    text-align: center;
+    color: #00ffc3;
+    background: transparent; /* No background */
+    box-shadow: none;         /* Remove any shadow */
+  }
 
-    .faq-question {
-      width: 100%;
-      padding: 12px;
-      margin: 10px 0;
-      background-color: #222;
-      color: white;
-      border: none;
-      font-size: 1em;
-      text-align: left;
-      cursor: pointer;
-      border-radius: 4px;
-    }
+  .stat-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #00ffc3;
+  }
 
-    .faq-question.active {
-      background-color: #333;
-    }
+  .stat-label {
+    margin-top: 8px;
+    font-size: 1.2em;
+    color: white;
+  }
+</style>
 
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      background-color: #1a1a1a;
-      padding: 0 10px;
-      border-radius: 4px;
-    }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
 
-    .faq-answer p {
-      margin: 10px 0;
-      padding: 0;
-    }
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
+      const prefix = counter.getAttribute("data-prefix") || "";
+      let count = 0;
 
-    .main-content {
-      margin-left: 320px;
-      padding: 20px;
-      flex: 1;
-    }
+      const speed = 1000; // Adjust speed as needed
+      const increment = Math.ceil(target / 100); // Makes it smoother
 
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 60px;
-      margin-bottom: 60px;
-      position: relative;
-      z-index: 2;
-    }
+      const updateCount = () => {
+        count += increment;
 
-    .stat-box {
-      padding: 10px 20px;
-      text-align: center;
-      color: #00ffc3;
-      background: transparent;
-      box-shadow: none;
-    }
-
-    .stat-number {
-      font-size: 2.8em;
-      font-weight: 700;
-      color: #ff66cc;
-      text-shadow: 2px 2px 4px #000;
-    }
-
-    .stat-label {
-      margin-top: 8px;
-      font-size: 1.2em;
-      color: white;
-    }
-
-    .trustpilot-logo {
-      width: 150px;
-      margin: 20px auto;
-      display: block;
-    }
-  </style>
-
-  <script>
-    // FAQ Toggle
-    document.querySelectorAll('.faq-question').forEach(button => {
-      button.addEventListener('click', () => {
-        const answer = button.nextElementSibling;
-        const isOpen = button.classList.contains('active');
-
-        document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = null);
-        document.querySelectorAll('.faq-question').forEach(el => el.classList.remove('active'));
-
-        if (!isOpen) {
-          button.classList.add('active');
-          answer.style.maxHeight = answer.scrollHeight + "px";
+        if (count >= target) {
+          counter.innerText = prefix + target.toLocaleString();
+        } else {
+          counter.innerText = prefix + count.toLocaleString();
+          requestAnimationFrame(updateCount);
         }
-      });
+      };
+
+      updateCount();
     });
+  });
+</script>
 
-    // Stat Number Scroll Animation
-    document.addEventListener("DOMContentLoaded", () => {
-      const counters = document.querySelectorAll(".stat-number");
-
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
-        const prefix = counter.getAttribute("data-prefix") || "";
-        let count = 0;
-
-        const speed = 40;
-        const increment = Math.ceil(target / 200); 
-
-        const updateCount = () => {
-          count += increment;
-          if (count >= target) {
-            counter.innerText = prefix + target.toLocaleString();
-          } else {
-            counter.innerText = prefix + count.toLocaleString();
-            requestAnimationFrame(updateCount);
-          }
-        };
-
-        updateCount();
-      });
-    });
-  </script>
+  <div class="faq-section">
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-item">
+    <button class="faq-question">Is b3n5 Trading legit?</button>
+    <div class="faq-answer">
+      <p>Absolutely! I've completed thousands of trades with verified feedback and a solid reputation across platforms like Steam, CSGOrep, and Trustpilot.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">How do I sell my skins?</button>
+    <div class="faq-answer">
+      <p>Send me a message on Twitter, Steam or Discord. Simple as well as fast responses.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">What payment methods do you support?</button>
+    <div class="faq-answer">
+      <p>Almost every payment method. Instant Bank transfer, Crypto etc. Depending on your location.</p>
+    </div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-question">Is there a minimum value for selling?</button>
+    <div class="faq-answer">
+      <p>I prefer trades above 20 USD, but feel free to message me about anything!</p>
+    </div>
+  </div>
+</div>
+  
 
 </body>
 </html>
