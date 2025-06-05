@@ -19,11 +19,19 @@
 
   <!-- Social Media Icons -->
   <div class="social-icons">
-    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button"></a>
-    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button"></a>
-    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button"></a>
-    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button"></a>
-    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat" class="icon-button"></a>
+    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter"
+        class="icon-button"></a>
+    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam"
+        class="icon-button"></a>
+    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep"
+        class="icon-button"></a>
+    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord"
+        class="icon-button"></a>
+    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat"
+        class="icon-button"></a>
+  <!-- </div> Current Available Items Button 
+  <div style="margin-top: 20px;">
+    <a href="skins.html" class="button">Current Available Items</a> -->
   </div>
 
   <!-- Inventory Section -->
@@ -39,50 +47,87 @@
   <script src="script.js"></script>
 
   <!-- Stats Section -->
-  <div class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
-      <div class="stat-label">In deals</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number" data-target="2000" data-prefix="+">0</div>
-      <div class="stat-label">Trades completed</div>
-    </div>
+<div class="stats-container">
+  <div class="stat-box">
+    <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
+    <div class="stat-label">In deals</div>
   </div>
+  <div class="stat-box">
+    <div class="stat-number" data-target="2000" data-prefix="+">0</div>
+    <div class="stat-label">Trades completed</div>
+  </div>
+</div>
 
-  <!-- Trustpilot Button -->
   <div class="trustpilot-button">
-    <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
-      <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
-    </a>
-  </div>
+  <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
+    <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
+  </a>
+</div>
+  
+<style>
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
 
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const counters = document.querySelectorAll(".stat-number");
+  .stat-box {
+    padding: 10px 20px;
+    text-align: center;
+    color: #00ffc3;
+    background: transparent; /* No background */
+    box-shadow: none;         /* Remove any shadow */
+  }
 
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
-        const prefix = counter.getAttribute("data-prefix") || "";
-        let count = 0;
+  .stat-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #00ffc3;
+  }
 
-        const speed = 1000;
-        const increment = Math.ceil(target / 100);
+  .stat-label {
+    margin-top: 8px;
+    font-size: 1.2em;
+    color: white;
+  }
+</style>
 
-        const updateCount = () => {
-          count += increment;
-          if (count >= target) {
-            counter.innerText = prefix + target.toLocaleString();
-          } else {
-            counter.innerText = prefix + count.toLocaleString();
-            requestAnimationFrame(updateCount);
-          }
-        };
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
 
-        updateCount();
-      });
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
+      const prefix = counter.getAttribute("data-prefix") || "";
+      let count = 0;
+
+      const speed = 1000; // Adjust speed as needed
+      const increment = Math.ceil(target / 100); // Makes it smoother
+
+      const updateCount = () => {
+        count += increment;
+
+        if (count >= target) {
+          counter.innerText = prefix + target.toLocaleString();
+        } else {
+          counter.innerText = prefix + count.toLocaleString();
+          requestAnimationFrame(updateCount);
+        }
+      };
+
+      updateCount();
     });
-  </script>
+  });
+</script>
+
+
+</body>
+
+</html>
 
 </body>
 </html>
