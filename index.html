@@ -2,15 +2,16 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>b3n5 Trading</title>
-  <link rel="icon" href="favicon.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="favicon.png" type="image/png">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+
   <div id="floating-skins"></div>
 
   <h1>b3n5 Trading</h1>
@@ -18,11 +19,19 @@
 
   <!-- Social Media Icons -->
   <div class="social-icons">
-    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button" /></a>
-    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button" /></a>
-    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button" /></a>
-    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button" /></a>
-    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat" class="icon-button" /></a>
+    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter"
+        class="icon-button"></a>
+    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam"
+        class="icon-button"></a>
+    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep"
+        class="icon-button"></a>
+    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord"
+        class="icon-button"></a>
+    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat"
+        class="icon-button"></a>
+  <!-- </div> Current Available Items Button 
+  <div style="margin-top: 20px;">
+    <a href="skins.html" class="button">Current Available Items</a> -->
   </div>
 
   <!-- Inventory Section -->
@@ -38,174 +47,79 @@
   <script src="script.js"></script>
 
   <!-- Stats Section -->
-  <div class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
-      <div class="stat-label">In deals</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number" data-target="2000" data-prefix="+">0</div>
-      <div class="stat-label">Trades completed</div>
-    </div>
+<div class="stats-container">
+  <div class="stat-box">
+    <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
+    <div class="stat-label">In deals</div>
   </div>
+  <div class="stat-box">
+    <div class="stat-number" data-target="2000" data-prefix="+">0</div>
+    <div class="stat-label">Trades completed</div>
+  </div>
+</div>
 
   <div class="trustpilot-button">
-    <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
-      <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo" />
-    </a>
-  </div>
+  <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
+    <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
+  </a>
+</div>
+  
+<style>
+  .stats-container {
+    display: flex;
+    justify-content: center;
+    gap: 60px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    position: relative;
+    z-index: 2;
+  }
 
-  <!-- FAQ Section -->
-  <div class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq-item">
-      <button class="faq-question">Is b3n5 Trading legit?</button>
-      <div class="faq-answer">
-        <p>Absolutely! I've completed thousands of trades with verified feedback and a solid reputation across platforms like Steam, CSGOrep, and Trustpilot.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">How do I sell my skins?</button>
-      <div class="faq-answer">
-        <p>Send me a message on Twitter, Steam or Discord. Simple as well as fast responses.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">What payment methods do you support?</button>
-      <div class="faq-answer">
-        <p>Almost every payment method. Instant Bank transfer, Crypto etc. Depending on your location.</p>
-      </div>
-    </div>
-    <div class="faq-item">
-      <button class="faq-question">Is there a minimum value for selling?</button>
-      <div class="faq-answer">
-        <p>I prefer trades above 20 USD, but feel free to message me about anything!</p>
-      </div>
-    </div>
-  </div>
+  .stat-box {
+    padding: 10px 20px;
+    text-align: center;
+    color: #00ffc3;
+    background: transparent; /* No background */
+    box-shadow: none;         /* Remove any shadow */
+  }
 
-  <!-- STYLES -->
-  <style>
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 60px;
-      margin-bottom: 60px;
-      position: relative;
-      z-index: 2;
-    }
+  .stat-number {
+    font-size: 2.8em;
+    font-weight: 700;
+    color: #00ffc3;
+  }
 
-    .stat-box {
-      padding: 10px 20px;
-      text-align: center;
-      background: transparent;
-      box-shadow: none;
-    }
+  .stat-label {
+    margin-top: 8px;
+    font-size: 1.2em;
+    color: white;
+  }
+</style>
 
-    .stat-number {
-      font-size: 2.8em;
-      font-weight: 700;
-      color: #ff55c8;
-      text-shadow: 0 0 8px rgba(255, 85, 200, 0.6);
-    }
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const counters = document.querySelectorAll(".stat-number");
 
-    .stat-label {
-      margin-top: 8px;
-      font-size: 1.2em;
-      color: white;
-    }
+    counters.forEach(counter => {
+      const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
+      const prefix = counter.getAttribute("data-prefix") || "";
+      let count = 0;
 
-    .trustpilot-button {
-      text-align: center;
-      margin-top: 20px;
-    }
+      const speed = 1000; // Adjust speed as needed
+      const increment = Math.ceil(target / 100); // Makes it smoother
 
-    .trustpilot-logo {
-      max-width: 140px;
-      height: auto;
-    }
+      const updateCount = () => {
+        count += increment;
 
-    .faq-section {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
-      color: white;
-    }
+        if (count >= target) {
+          counter.innerText = prefix + target.toLocaleString();
+        } else {
+          counter.innerText = prefix + count.toLocaleString();
+          requestAnimationFrame(updateCount);
+        }
+      };
 
-    .faq-question {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 10px 0;
-      background-color: #333;
-      color: white;
-      border: none;
-      font-size: 1.1em;
-      text-align: left;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .faq-question.active {
-      background-color: #444;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      background-color: #222;
-      padding: 0 20px;
-      border-radius: 4px;
-    }
-
-    .faq-answer p {
-      margin: 10px 0;
-      padding: 0;
-    }
-  </style>
-
-  <!-- SCRIPTS -->
-  <script>
-    document.addEventListener("DOMContentLoaded", () => {
-      const counters = document.querySelectorAll(".stat-number");
-
-      counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
-        const prefix = counter.getAttribute("data-prefix") || "";
-        let count = 0;
-        const speed = 2000;
-        const increment = Math.ceil(target / (speed / 16));
-
-        const updateCount = () => {
-          count += increment;
-          if (count >= target) {
-            counter.innerText = prefix + target.toLocaleString();
-          } else {
-            counter.innerText = prefix + count.toLocaleString();
-            requestAnimationFrame(updateCount);
-          }
-        };
-
-        updateCount();
-      });
-
-      // FAQ Dropdown
-      document.querySelectorAll('.faq-question').forEach(button => {
-        button.addEventListener('click', () => {
-          const answer = button.nextElementSibling;
-          button.classList.toggle('active');
-
-          if (answer.style.maxHeight) {
-            answer.style.maxHeight = null;
-          } else {
-            document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
-            answer.style.maxHeight = answer.scrollHeight + "px";
-          }
-        });
-      });
+      updateCount();
     });
-  </script>
-</body>
-
-</html>
+  });
+</script>
