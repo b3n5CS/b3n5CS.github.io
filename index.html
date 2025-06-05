@@ -151,6 +151,20 @@
     </div>
   </div>
 </div>
+  
+document.querySelectorAll('.faq-question').forEach(button => {
+  button.addEventListener('click', () => {
+    const answer = button.nextElementSibling;
+    button.classList.toggle('active');
+
+    if (answer.style.maxHeight) {
+      answer.style.maxHeight = null;
+    } else {
+      document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
+      answer.style.maxHeight = answer.scrollHeight + "px";
+    }
+  });
+});
 
 </body>
 
