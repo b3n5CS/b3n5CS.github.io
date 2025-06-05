@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,54 +8,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
-  <div id="floating-skins"></div>
 
-  <h1>b3n5 Trading</h1>
-  <p>Buying skins at good rates with most payment methods!</p>
-
-  <!-- Social Media Icons -->
-  <div class="social-icons">
-    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button" /></a>
-    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button" /></a>
-    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button" /></a>
-    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button" /></a>
-    <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat" class="icon-button" /></a>
-  </div>
-
-  <!-- Inventory Section -->
-  <div id="inventory">
-    <div id="inventory-items"></div>
-  </div>
-
-  <!-- Reviews Section -->
-  <div class="reviews-wrapper">
-    <div class="review-text" id="reviewText"></div>
-  </div>
-
-  <script src="script.js"></script>
-
-  <!-- Stats Section -->
-  <div class="stats-container">
-    <div class="stat-box">
-      <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
-      <div class="stat-label">In deals</div>
-    </div>
-    <div class="stat-box">
-      <div class="stat-number" data-target="2000" data-prefix="+">0</div>
-      <div class="stat-label">Trades completed</div>
-    </div>
-  </div>
-
-  <div class="trustpilot-button">
-    <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
-      <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo" />
-    </a>
-  </div>
-
-  <!-- FAQ Section -->
-  <div class="faq-section">
+  <!-- FAQ Sidebar -->
+  <div class="faq-sidebar">
     <h2>Frequently Asked Questions</h2>
     <div class="faq-item">
       <button class="faq-question">Is b3n5 Trading legit?</button>
@@ -84,8 +39,119 @@
     </div>
   </div>
 
-  <!-- STYLES -->
+  <!-- Main Content -->
+  <div class="main-content">
+    <div id="floating-skins"></div>
+
+    <h1>b3n5 Trading</h1>
+    <p>Buying skins at good rates with most payment methods!</p>
+
+    <!-- Social Media Icons -->
+    <div class="social-icons">
+      <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button" /></a>
+      <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button" /></a>
+      <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button" /></a>
+      <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button" /></a>
+      <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="csfloat" class="icon-button" /></a>
+    </div>
+
+    <!-- Inventory Section -->
+    <div id="inventory">
+      <div id="inventory-items"></div>
+    </div>
+
+    <!-- Reviews Section -->
+    <div class="reviews-wrapper">
+      <div class="review-text" id="reviewText"></div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="stats-container">
+      <div class="stat-box">
+        <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
+        <div class="stat-label">In deals</div>
+      </div>
+      <div class="stat-box">
+        <div class="stat-number" data-target="2000" data-prefix="+">0</div>
+        <div class="stat-label">Trades completed</div>
+      </div>
+    </div>
+
+    <!-- Trustpilot -->
+    <div class="trustpilot-button">
+      <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
+        <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo" />
+      </a>
+    </div>
+  </div>
+
+  <!-- JS and Styles -->
+  <script src="script.js"></script>
+
   <style>
+    body {
+      display: flex;
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: #0d0d0d;
+    }
+
+    .faq-sidebar {
+      width: 300px;
+      height: 100vh;
+      overflow-y: auto;
+      padding: 20px;
+      background-color: #111;
+      color: white;
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 10;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.5);
+    }
+
+    .faq-sidebar h2 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    .faq-question {
+      width: 100%;
+      padding: 12px;
+      margin: 10px 0;
+      background-color: #222;
+      color: white;
+      border: none;
+      font-size: 1em;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    .faq-question.active {
+      background-color: #333;
+    }
+
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+      background-color: #1a1a1a;
+      padding: 0 10px;
+      border-radius: 4px;
+    }
+
+    .faq-answer p {
+      margin: 10px 0;
+      padding: 0;
+    }
+
+    .main-content {
+      margin-left: 320px;
+      padding: 20px;
+      flex: 1;
+    }
+
     .stats-container {
       display: flex;
       justify-content: center;
@@ -99,6 +165,7 @@
     .stat-box {
       padding: 10px 20px;
       text-align: center;
+      color: #00ffc3;
       background: transparent;
       box-shadow: none;
     }
@@ -106,8 +173,8 @@
     .stat-number {
       font-size: 2.8em;
       font-weight: 700;
-      color: #ff55c8;
-      text-shadow: 0 0 8px rgba(255, 85, 200, 0.6);
+      color: #ff66cc;
+      text-shadow: 2px 2px 4px #000;
     }
 
     .stat-label {
@@ -116,57 +183,31 @@
       color: white;
     }
 
-    .trustpilot-button {
-      text-align: center;
-      margin-top: 20px;
-    }
-
     .trustpilot-logo {
-      max-width: 140px;
-      height: auto;
-    }
-
-    .faq-section {
-      max-width: 800px;
-      margin: 60px auto;
-      padding: 20px;
-      color: white;
-    }
-
-    .faq-question {
-      width: 100%;
-      padding: 12px 20px;
-      margin: 10px 0;
-      background-color: #333;
-      color: white;
-      border: none;
-      font-size: 1.1em;
-      text-align: left;
-      cursor: pointer;
-      border-radius: 4px;
-    }
-
-    .faq-question.active {
-      background-color: #444;
-    }
-
-    .faq-answer {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease;
-      background-color: #222;
-      padding: 0 20px;
-      border-radius: 4px;
-    }
-
-    .faq-answer p {
-      margin: 10px 0;
-      padding: 0;
+      width: 150px;
+      margin: 20px auto;
+      display: block;
     }
   </style>
 
-  <!-- SCRIPTS -->
   <script>
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const answer = button.nextElementSibling;
+        const isOpen = button.classList.contains('active');
+
+        document.querySelectorAll('.faq-answer').forEach(el => el.style.maxHeight = null);
+        document.querySelectorAll('.faq-question').forEach(el => el.classList.remove('active'));
+
+        if (!isOpen) {
+          button.classList.add('active');
+          answer.style.maxHeight = answer.scrollHeight + "px";
+        }
+      });
+    });
+
+    // Stat Number Scroll Animation
     document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll(".stat-number");
 
@@ -174,8 +215,9 @@
         const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
         const prefix = counter.getAttribute("data-prefix") || "";
         let count = 0;
-        const speed = 2000;
-        const increment = Math.ceil(target / (speed / 16));
+
+        const speed = 40;
+        const increment = Math.ceil(target / 200); 
 
         const updateCount = () => {
           count += increment;
@@ -189,28 +231,9 @@
 
         updateCount();
       });
-
-      // FAQ Dropdown
-      document.querySelectorAll('.faq-question').forEach(button => {
-        button.addEventListener('click', () => {
-          const answer = button.nextElementSibling;
-          button.classList.toggle('active');
-
-          if (answer.style.maxHeight) {
-            answer.style.maxHeight = null;
-          } else {
-            document.querySelectorAll('.faq-answer').forEach(a => a.style.maxHeight = null);
-            answer.style.maxHeight = answer.scrollHeight + "px";
-          }
-        });
-      });
     });
   </script>
-</body>
-
-</html>
-
 
 </body>
-
 </html>
+
