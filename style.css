@@ -277,3 +277,56 @@
   filter: drop-shadow(0 0 10px hotpink) brightness(1.2);
 }
 
+.faq-section {
+  max-width: 700px;
+  margin: 60px auto 100px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 10px;
+  padding: 30px;
+  box-shadow: 0 0 15px hotpink;
+  color: white;
+  z-index: 2;
+  position: relative;
+}
+
+.faq-section h2 {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: hotpink;
+}
+
+.faq-item {
+  margin-bottom: 15px;
+}
+
+.faq-question {
+  background: none;
+  border: none;
+  color: yellow;
+  font-size: 1.2em;
+  text-align: left;
+  width: 100%;
+  cursor: pointer;
+  outline: none;
+  padding: 10px;
+  transition: background 0.3s ease;
+}
+
+.faq-question:hover {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  padding: 0 10px;
+}
+
+.faq-answer p {
+  margin: 10px 0;
+  font-size: 1em;
+  color: #eee;
+}
+
+
