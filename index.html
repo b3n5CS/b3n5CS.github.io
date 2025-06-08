@@ -8,6 +8,93 @@
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    .stats-container {
+      display: flex;
+      justify-content: center;
+      gap: 60px;
+      margin-top: 60px;
+      margin-bottom: 60px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .stat-box {
+      padding: 10px 20px;
+      text-align: center;
+      color: #00ffc3;
+      background: transparent;
+      box-shadow: none;
+    }
+
+    .stat-number {
+      font-size: 2.8em;
+      font-weight: 700;
+      color: #00ffc3;
+    }
+
+    .stat-label {
+      margin-top: 8px;
+      font-size: 1.2em;
+      color: white;
+    }
+
+    .trustpilot-button {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .trustpilot-logo {
+      height: 40px;
+    }
+
+    /* FAQ STYLES */
+    .faq-section {
+      position: fixed;
+      top: 100px;
+      left: 20px;
+      width: 280px;
+      z-index: 10;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 15px;
+      border-radius: 8px;
+    }
+
+    .faq-section h2 {
+      color: #00ffc3;
+      font-size: 1.4em;
+      margin-bottom: 10px;
+    }
+
+    .faq-item {
+      margin-bottom: 10px;
+    }
+
+    .faq-question {
+      width: 100%;
+      background: #111;
+      color: white;
+      padding: 10px;
+      border: none;
+      text-align: left;
+      cursor: pointer;
+      border-radius: 5px;
+      font-family: Poppins, sans-serif;
+    }
+
+    .faq-answer {
+      display: none;
+      padding: 10px;
+      background: #222;
+      color: #ccc;
+      border-radius: 5px;
+      margin-top: 5px;
+    }
+
+    .faq-question.active + .faq-answer {
+      display: block;
+    }
+  </style>
 </head>
 
 <body>
@@ -19,108 +106,97 @@
 
   <!-- Social Media Icons -->
   <div class="social-icons">
-    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter"
-        class="icon-button"></a>
-    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam"
-        class="icon-button"></a>
-    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep"
-        class="icon-button"></a>
-    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord"
-        class="icon-button"></a>
-  <!-- </div> Current Available Items Button 
-  <div style="margin-top: 20px;">
-    <a href="skins.html" class="button">Current Available Items</a> -->
+    <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button"></a>
+    <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button"></a>
+    <a href="https://csgo-rep.com/profile/76561198817596493" target="_blank"><img src="assets/icons/csgorep.png" alt="CSGORep" class="icon-button"></a>
+    <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button"></a>
   </div>
 
-  <!-- Inventory Section -->
   <div id="inventory">
     <div id="inventory-items"></div>
   </div>
 
-  <!-- Reviews Section -->
   <div class="reviews-wrapper">
     <div class="review-text" id="reviewText"></div>
   </div>
 
-  <script src="script.js"></script>
-
-  <!-- Stats Section -->
-<div class="stats-container">
-  <div class="stat-box">
-    <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
-    <div class="stat-label">In deals</div>
+  <div class="stats-container">
+    <div class="stat-box">
+      <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
+      <div class="stat-label">In deals</div>
+    </div>
+    <div class="stat-box">
+      <div class="stat-number" data-target="2000" data-prefix="+">0</div>
+      <div class="stat-label">Trades completed</div>
+    </div>
   </div>
-  <div class="stat-box">
-    <div class="stat-number" data-target="2000" data-prefix="+">0</div>
-    <div class="stat-label">Trades completed</div>
-  </div>
-</div>
 
   <div class="trustpilot-button">
-  <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
-    <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
-  </a>
-</div>
-  
-<style>
-  .stats-container {
-    display: flex;
-    justify-content: center;
-    gap: 60px;
-    margin-top: 60px;
-    margin-bottom: 60px;
-    position: relative;
-    z-index: 2;
-  }
+    <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
+      <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
+    </a>
+  </div>
 
-  .stat-box {
-    padding: 10px 20px;
-    text-align: center;
-    color: #00ffc3;
-    background: transparent; /* No background */
-    box-shadow: none;         /* Remove any shadow */
-  }
+  <!-- FAQ Section -->
+  <div class="faq-section">
+    <h2>FAQ</h2>
+    <div class="faq-item">
+      <button class="faq-question">Is b3n5 Trading legit?</button>
+      <div class="faq-answer">Absolutely! Thousands of trades with positive feedback across multiple platforms.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">How do I sell my skins?</button>
+      <div class="faq-answer">Contact me on Twitter, Steam, or Discord to get started.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">What payment methods do you support?</button>
+      <div class="faq-answer">Instant bank transfer, crypto, and more—depending on your region.</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-question">Minimum trade value?</button>
+      <div class="faq-answer">Preferred trades above $20, but feel free to message about anything.</div>
+    </div>
+  </div>
 
-  .stat-number {
-    font-size: 2.8em;
-    font-weight: 700;
-    color: #00ffc3;
-  }
+  <script src="script.js"></script>
 
-  .stat-label {
-    margin-top: 8px;
-    font-size: 1.2em;
-    color: white;
-  }
-</style>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const counters = document.querySelectorAll(".stat-number");
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    const counters = document.querySelectorAll(".stat-number");
+      counters.forEach(counter => {
+        const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
+        const prefix = counter.getAttribute("data-prefix") || "";
+        let count = 0;
+        const increment = Math.ceil(target / 100);
 
-    counters.forEach(counter => {
-      const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
-      const prefix = counter.getAttribute("data-prefix") || "";
-      let count = 0;
+        const updateCount = () => {
+          count += increment;
+          if (count >= target) {
+            counter.innerText = prefix + target.toLocaleString();
+          } else {
+            counter.innerText = prefix + count.toLocaleString();
+            requestAnimationFrame(updateCount);
+          }
+        };
 
-      const speed = 1000; // Adjust speed as needed
-      const increment = Math.ceil(target / 100); // Makes it smoother
+        updateCount();
+      });
 
-      const updateCount = () => {
-        count += increment;
-
-        if (count >= target) {
-          counter.innerText = prefix + target.toLocaleString();
-        } else {
-          counter.innerText = prefix + count.toLocaleString();
-          requestAnimationFrame(updateCount);
-        }
-      };
-
-      updateCount();
+      // FAQ toggle
+      const questions = document.querySelectorAll(".faq-question");
+      questions.forEach(btn => {
+        btn.addEventListener("click", () => {
+          btn.classList.toggle("active");
+        });
+      });
     });
-  });
-</script>
+  </script>
+
+</body>
+
+</html>
+
 
 
 </body>
