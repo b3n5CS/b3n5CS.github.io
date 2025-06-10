@@ -282,7 +282,7 @@
   width: 360px;
   padding: 20px;
   color: white;
-  background: none; /* Optional: remove background */
+  background: none;
 }
 
 .faq-item {
@@ -293,13 +293,12 @@
   font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 5px;
-  color: white; /* Force white text */
+  color: white;
 }
 
 .faq-answer {
   font-size: 1em;
   line-height: 1.5em;
-  color: white; /* Ensure answer text is also white */
+  color: white;
 }
-
 
