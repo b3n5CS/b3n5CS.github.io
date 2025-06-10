@@ -293,12 +293,13 @@
   font-weight: bold;
   font-size: 1.1em;
   margin-bottom: 5px;
-  color: #ffffff;
+  color: white; /* Force white text */
 }
 
 .faq-answer {
   font-size: 1em;
   line-height: 1.5em;
-  color: white;
+  color: white; /* Ensure answer text is also white */
 }
+
 
