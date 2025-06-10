@@ -274,31 +274,3 @@
   transform: scale(1.1);
   filter: drop-shadow(0 0 10px hotpink) brightness(1.2);
 }
-
-.faq-section {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 360px;
-  padding: 20px;
-  color: white;
-  background: none;
-}
-
-.faq-item {
-  margin-bottom: 20px;
-}
-
-.faq-question {
-  font-weight: bold;
-  font-size: 1.1em;
-  margin-bottom: 5px;
-  color: white;
-}
-
-.faq-answer {
-  font-size: 1em;
-  line-height: 1.5em;
-  color: white;
-}
-
