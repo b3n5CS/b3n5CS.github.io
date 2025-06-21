@@ -1,114 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>b3n5 Trading</title>
   <link rel="icon" href="favicon.png" type="image/png">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <style>
-    .stats-container {
-      display: flex;
-      justify-content: center;
-      gap: 60px;
-      margin-top: 60px;
-      margin-bottom: 60px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .stat-box {
-      padding: 10px 20px;
-      text-align: center;
-      color: #00ffc3;
-      background: transparent;
-      box-shadow: none;
-    }
-
-    .stat-number {
-      font-size: 2.8em;
-      font-weight: 700;
-      color: #00ffc3;
-    }
-
-    .stat-label {
-      margin-top: 8px;
-      font-size: 1.2em;
-      color: white;
-    }
-
-    .trustpilot-button {
-      text-align: center;
-      margin-top: 20px;
-    }
-
-    .trustpilot-logo {
-      height: 100px;
-      width: auto;
-    }
-
-
-    /* FAQ styles */
-.faq-section {
-  position: absolute;
-  top: 100px;
-  left: 0;
-  width: 360px; /* Increased by 20% */
-  padding: 20px;
-  background-color: rgba(0, 0, 0, 0.6);
-  border-radius: 8px;
-  color: white;
-}
-
-.faq-section h2 {
-  color: #ffffff;
-  font-size: 1.4em;
-  margin-bottom: 10px;
-}
-
-.faq-item {
-  margin-bottom: 10px;
-}
-
-.faq-question {
-  width: 100%;
-  background: #111;
-  color: white;
-  padding: 10px;
-  border: none;
-  text-align: left;
-  cursor: pointer;
-  border-radius: 5px;
-  font-family: Poppins, sans-serif;
-}
-
-.faq-answer {
-  display: none;
-  padding: 10px;
-  background: #222;
-  color: #ccc;
-  border-radius: 5px;
-  margin-top: 5px;
-}
-
-.faq-question.active + .faq-answer {
-  display: block;
-}
-}
-    }
-  </style>
 </head>
-
 <body>
-
   <div id="floating-skins"></div>
 
-  <h1>b3n5 Trading</h1>
-  <p>Buying skins at good rates with most payment methods!</p>
+  <header>
+    <h1>b3n5 Trading</h1>
+    <p>Buying skins at good rates with most payment methods!</p>
+  </header>
 
-  <!-- Social Media Icons -->
   <div class="social-icons">
     <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button"></a>
     <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button"></a>
@@ -142,8 +49,7 @@
     </a>
   </div>
 
-  <!-- FAQ Section -->
- <div class="faq-section">
+  <div class="faq-section">
     <h2>FAQ</h2>
     <div class="faq-item">
       <button class="faq-question">Is b3n5 Trading legit?</button>
@@ -164,19 +70,14 @@
   </div>
 
   <script src="script.js"></script>
-
-  <script src="script.js"></script>
-
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const counters = document.querySelectorAll(".stat-number");
-
       counters.forEach(counter => {
         const target = parseInt(counter.getAttribute("data-target").replace(/\D/g, ""));
         const prefix = counter.getAttribute("data-prefix") || "";
         let count = 0;
         const increment = Math.ceil(target / 100);
-
         const updateCount = () => {
           count += increment;
           if (count >= target) {
@@ -186,11 +87,9 @@
             requestAnimationFrame(updateCount);
           }
         };
-
         updateCount();
       });
 
-      // FAQ toggle
       const questions = document.querySelectorAll(".faq-question");
       questions.forEach(btn => {
         btn.addEventListener("click", () => {
@@ -199,12 +98,8 @@
       });
     });
   </script>
-
 </body>
-
 </html>
-
-
 
 </body>
 
