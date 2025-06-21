@@ -137,40 +137,36 @@ p {
   padding: 15px;
   margin: 20px auto;
   max-width: 90%;
+  width: 360px; /* Fixed width for desktop sidebar */
 }
 
 .faq-section h2 {
   font-size: 1.5rem;
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .faq-item {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .faq-question {
   width: 100%;
   background: #111;
   color: white;
-  padding: 10px;
-  border: none;
-  text-align: left;
-  cursor: pointer;
+  padding: 12px;
   border-radius: 5px;
   font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
 }
 
 .faq-answer {
-  display: none;
   padding: 10px;
   background: #222;
   color: #ccc;
   border-radius: 5px;
   margin-top: 5px;
-}
-
-.faq-question.active + .faq-answer {
-  display: block;
+  font-size: 1rem;
 }
 
 /* Reviews Wrapper */
@@ -255,10 +251,34 @@ iframe {
   max-width: 1200px;
 }
 
+/* Desktop FAQ Positioning */
+@media (min-width: 769px) {
+  .faq-section {
+    position: absolute;
+    top: 100px;
+    left: 20px;
+    margin: 0;
+  }
+
+  /* Add padding to main content to avoid FAQ overlap */
+  body {
+    padding-left: 400px; /* FAQ width (360px) + 20px left + 20px buffer */
+  }
+
+  .social-icons,
+  .stats-container,
+  .trustpilot-button,
+  .reviews-wrapper,
+  #inventory {
+    max-width: calc(100% - 400px); /* Adjust content width */
+  }
+}
+
 /* Mobile Media Queries */
 @media (max-width: 768px) {
   body {
     padding: 15px;
+    padding-left: 15px; /* Reset desktop padding */
   }
 
   h1 {
@@ -301,12 +321,24 @@ iframe {
   }
 
   .faq-section {
+    position: relative;
     max-width: 100%;
+    width: auto;
     padding: 10px;
   }
 
   .faq-section h2 {
     font-size: 1.25rem;
+  }
+
+  .faq-question {
+    font-size: 1rem;
+    padding: 10px;
+  }
+
+  .faq-answer {
+    font-size: 0.9rem;
+    padding: 8px;
   }
 
   .review-text {
@@ -345,5 +377,17 @@ iframe {
 
   .trustpilot-logo {
     max-width: 120px;
+  }
+
+  .faq-section h2 {
+    font-size: 1.1rem;
+  }
+
+  .faq-question {
+    font-size: 0.9rem;
+  }
+
+  .faq-answer {
+    font-size: 0.85rem;
   }
 }
