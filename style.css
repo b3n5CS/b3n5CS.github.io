@@ -6,7 +6,7 @@
 }
 
 body {
-  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('assets/backgroundone.png') no-repeat center center fixed;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), 
   background-size: cover;
   background-color: #1A1A1A; /* Fallback */
   font-family: 'Poppins', sans-serif;
