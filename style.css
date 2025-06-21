@@ -12,12 +12,13 @@ body {
   padding: 20px;
   color: #FFFFFF;
   position: relative;
-  min-height: 100vh;
+  min-height: 120vh; /* Increased to extend page height */
 }
 
 /* Header Styles */
 header {
-  margin-bottom: 30px;
+  margin-bottom: 50px; /* Increased from 30px */
+  padding: 20px 0; /* Added padding */
 }
 
 h1 {
@@ -35,7 +36,7 @@ p {
 
 /* Social Icons */
 .social-icons {
-  margin: 20px auto;
+  margin: 30px auto; /* Increased from 20px */
   display: flex;
   justify-content: center;
   gap: 15px;
@@ -55,7 +56,7 @@ p {
 
 /* Inventory */
 #inventory {
-  margin: 30px auto;
+  margin: 40px auto; /* Increased from 30px */
   max-width: 1200px;
   display: none;
 }
@@ -77,9 +78,11 @@ p {
   display: flex;
   justify-content: center;
   gap: 30px;
-  margin: 40px auto;
+  margin: 60px auto; /* Increased from 40px */
+  padding: 20px; /* Added padding */
   max-width: 1200px;
   flex-wrap: wrap;
+  min-height: 200px; /* Added to extend section */
 }
 
 .stat-box {
@@ -104,7 +107,7 @@ p {
 
 /* Trustpilot Button */
 .trustpilot-button {
-  margin: 30px auto;
+  margin: 40px auto; /* Increased from 30px */
   display: flex;
   justify-content: center;
 }
@@ -161,11 +164,12 @@ p {
 
 /* Reviews Wrapper */
 .reviews-wrapper {
-  margin: 30px auto;
-  padding: 15px;
+  margin: 40px auto; /* Increased from 30px */
+  padding: 20px; /* Increased from 15px */
   max-width: 90%;
   background: #2A2A2A;
   border-radius: 8px;
+  min-height: 150px; /* Added to extend section */
 }
 
 .review-text {
@@ -208,7 +212,7 @@ p {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition HAPPENING HERE: background 0.3s ease;
+  transition: background 0.3s ease;
   margin: 10px;
   display: inline-block;
 }
@@ -236,7 +240,7 @@ iframe {
   }
 
   body {
-    padding-left: 300px; /* Reduced from 400px to shift content left */
+    padding-left: 300px; /* Unchanged from previous fix */
   }
 
   .social-icons,
@@ -244,7 +248,7 @@ iframe {
   .trustpilot-button,
   .reviews-wrapper,
   #inventory {
-    max-width: calc(100% - 300px); /* Adjusted to match padding */
+    max-width: calc(100% - 300px); /* Unchanged */
   }
 }
 
@@ -265,6 +269,7 @@ iframe {
 
   .social-icons {
     gap: 10px;
+    margin: 20px auto; /* Adjusted for mobile */
   }
 
   .icon-button {
@@ -274,7 +279,9 @@ iframe {
 
   .stats-container {
     gap: 20px;
-    margin: 20px auto;
+    margin: 30px auto; /* Adjusted for mobile */
+    padding: 15px;
+    min-height: 150px; /* Adjusted for mobile */
     flex-direction: column;
   }
 
@@ -284,6 +291,10 @@ iframe {
 
   .stat-label {
     font-size: 0.9rem;
+  }
+
+  .trustpilot-button {
+    margin: 30px auto; /* Adjusted for mobile */
   }
 
   .trustpilot-logo {
@@ -313,6 +324,12 @@ iframe {
   .faq-answer {
     font-size: 0.9rem;
     padding: 8px;
+  }
+
+  .reviews-wrapper {
+    margin: 30px auto; /* Adjusted for mobile */
+    padding: 15px;
+    min-height: 120px; /* Adjusted for mobile */
   }
 
   .review-text {
@@ -347,6 +364,10 @@ iframe {
   .icon-button {
     width: 36px;
     height: 36px;
+  }
+
+  .trustpilot-button {
+    margin: 20px auto;
   }
 
   .trustpilot-logo {
