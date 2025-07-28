@@ -41,7 +41,7 @@ function showInventory() {
 }
 
 // Floating skins
-const skins = ['awp.png', 'gaben.png', 'gold.png'];
+const skins = ['ak.png', 'awp.png', 'm9.png', 'cobalt.png', 'blaze.png', 'bravo.png', 'mac10.png', 'keyd.png', 'gaben.png', 'gold.png'];
 const floatingContainer = document.getElementById('floating-skins');
 const floatingImages = [];
 
