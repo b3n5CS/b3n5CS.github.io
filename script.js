@@ -102,21 +102,6 @@ const reviews = [
   "10/10 trader and very trustworthy - C0mplex",
   "I sold him a few items from my collection, a super efficient and competent guy. One of the best traders I ever had the pleasure of dealing with. - Thorben",
   "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again. - Mo",
-  "Bought my UU balance, everything was smooth and easy. He even let me pick the item to borrow for a week during the 7 day cooldown. - KrisGFX",
-  "Second time going through B3n5 to sell an item, this time for a Skeleton Ruby I unboxed! Always fair, quick and reliable! -FFACTgg",
-  "Was my first time selling skins to a cash trader, and he was very quick and helped me price my skins fairly!!! 10/10 would sell again. - leddy_counterstrike_gamer_69",
-  "Sold him a CS skin worth $2k via Wise, very nice and reliable person - Crouch",
-  "Sold Karambit Fade through bank. Took about 15 minutes from DMing to receiving the money. Would recommend. - Guardy"
-  "sold knife for bank tranf 417 sent as soon as item was accepted. - Garfield"
-  "Another smooth quick and reliable trade. Bought 2 knives and 2 gloves worth 1.135 USD. Recommended trader. +rep - DYZ Trades
-  "Sold a mixture of cases, capsules and skins. B3n5 was accommodating with the time it took to move items from storage and paid instantly. - Tobek"
-  "B3N5 is fastm reliable and will bend over backwards to accommodate you. He will give you a price and show you how he got to that price. My GOAT. - Lyons"
-  "sold him skeleton fade fn for around 1150€ the trade was quick and safe and i went first with the trade, highly recommend ! - Mo"
-  "My first trader outside of trading and selling sites and it was a good and fast trade. Recommend him! I would trade with him again 100%. Thank you bro - |шлюха| F8XX"
-  "Always super smooth, great price ez transaction <3 - Fawkesie"
-  "Good guy. Easy to trust and his actions and communications showed that. Would 100% do business with again. Thank you mate :) - ohheaso"
-  "Bought a few items from my inventory, he is very communicative, quick, & easy to trade with. Had no issues with recieving funds via bank transfer :) - Beige"
-  "a mutual friend connected between us and i enjoyed the trade a lot, ben was very professional, patient and quick, would trade with him again for sure - Pood"
 ];
 
 let currentReview = 0;
