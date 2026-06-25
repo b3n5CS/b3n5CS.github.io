@@ -164,7 +164,7 @@ const VF_REVIEWS = [
 // Headline numbers shown above the feed — set these to your real totals.
 const VF_OVERALL = "4.9";                               // big rating number
 const VF_TOTAL   = "80+";                               // shown in the subtitle line
-const VF_COUNTS  = { csgorep: null, trustpilot: 80 };   // set csgorep to your real rep count (null shows "—")
+const VF_COUNTS  = { csgorep: 150+, trustpilot: 80+ };   // set csgorep to your real rep count (null shows "—")
 
 // ---- vouches feed renderer (no need to edit below here) --------------
 (function () {
