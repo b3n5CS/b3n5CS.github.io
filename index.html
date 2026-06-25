@@ -10,12 +10,10 @@
 </head>
 <body>
   <div id="floating-skins"></div>
-
   <header>
     <h1>b3n5 Trading</h1>
     <p>Buy and sell CS skins with trusted rates and secure payments</p>
   </header>
-
   <div class="social-icons">
     <a href="https://x.com/b3n5_" target="_blank"><img src="assets/icons/twitter.png" alt="Twitter" class="icon-button"></a>
     <a href="https://steamcommunity.com/id/b3n5CS/" target="_blank"><img src="assets/icons/steam.png" alt="Steam" class="icon-button"></a>
@@ -23,11 +21,9 @@
     <a href="https://discord.com/users/352187183769059330" target="_blank"><img src="assets/icons/discord.png" alt="Discord" class="icon-button"></a>
     <a href="https://csfloat.com/stall/76561198817596493" target="_blank"><img src="assets/icons/csfloat.png" alt="CSFloat" class="icon-button"></a>
   </div>
-
   <div id="inventory">
     <div id="inventory-items"></div>
   </div>
-
   <div class="stats-container">
     <div class="stat-box">
       <div class="stat-number" data-target="100000" data-prefix="+$">0</div>
@@ -38,16 +34,49 @@
       <div class="stat-label">Trades Completed</div>
     </div>
   </div>
-
   <div class="trustpilot-button">
     <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank">
       <img src="assets/icons/trustpilot.png" alt="Trustpilot" class="trustpilot-logo">
     </a>
   </div>
-
   <div class="reviews-wrapper">
     <div class="review-text" id="reviewText"></div>
   </div>
+
+  <!-- ===== vouches feed : start (styles live in style.css, logic in script.js) ===== -->
+  <section class="vouches" aria-label="Customer reviews">
+    <div class="vf-head">
+      <div>
+        <div class="vf-rating">
+          <span class="num" id="vfOverall">4.9</span>
+          <span class="stars" aria-hidden="true">★★★★★</span>
+        </div>
+        <p class="vf-subtitle">Based on <b id="vfTotal">80+</b> verified trades</p>
+      </div>
+      <div class="vf-platforms">
+        <div class="vf-stat"><div class="n" id="vfCrN">—</div><div class="l cr">CSGORep</div></div>
+        <div class="vf-stat"><div class="n" id="vfTpN">80</div><div class="l tp">Trustpilot</div></div>
+      </div>
+    </div>
+
+    <hr class="vf-rule">
+
+    <div class="vf-filters" id="vfFilters" role="group" aria-label="Filter reviews by platform">
+      <button class="vf-chip" data-filter="all" aria-pressed="true">All reviews</button>
+      <button class="vf-chip" data-filter="csgorep" aria-pressed="false">CSGORep</button>
+      <button class="vf-chip" data-filter="trustpilot" aria-pressed="false">Trustpilot</button>
+    </div>
+
+    <div class="vf-grid" id="vfGrid"><!-- cards injected by script.js --></div>
+
+    <div class="vf-foot">
+      <a href="https://www.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener">
+        View all reviews
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
+      </a>
+    </div>
+  </section>
+  <!-- ===== vouches feed : end ===== -->
 
   <div class="faq-section">
     <h2>FAQ</h2>
@@ -68,7 +97,6 @@
       <div class="faq-answer">Preferably over $10, but feel free to contact about any offer.</div>
     </div>
   </div>
-
   <script src="script.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
