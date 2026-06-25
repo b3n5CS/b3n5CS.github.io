@@ -92,25 +92,130 @@ function animate() {
 
 animate();
 
-// Review logic
-const reviews = [
-  "Trade went super smooth, quick replies, honest guy! I recommend him to everyone! - Hygienic",
-  "Sold my ST Huntsman Knife lore MW 100% would recommend to anyone in need of clear communication quick transaction and safe trading! - Kieu",
-  "Super fast and responsive, great service - 🗿⃤⃢ KING NOTHINGG",
-  "Ben is one of my go to traders, always fast & reliable! Very grateful - leddy_counterstrike_gamer_69",
-  "Sold an item and had the money within 15 minutes of first message. GOAT. - 🗿⃤⃢ KING NOTHINGG",
-  "10/10 trader and very trustworthy - C0mplex",
-  "I sold him a few items from my collection, a super efficient and competent guy. One of the best traders I ever had the pleasure of dealing with. - Thorben",
-  "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again. - Mo",
+// =====================================================================
+// REVIEWS  —  single source of truth.
+// This one list powers BOTH your rotating review line (#reviewText) and
+// the new vouches feed cards, so you only edit reviews in one place.
+//
+// Fields:
+//   author    the name shown on the card / line
+//   platform  "csgorep" | "trustpilot"  (controls the badge + filter tab)
+//   rating    1–5  (defaults to 5 if left out)
+//   text      the review itself
+//
+// NOTE: I tagged your existing reviews as "csgorep" because the usernames
+// look like Steam profiles. Change any that came from Trustpilot, and add
+// new Trustpilot reviews using the commented example at the bottom.
+// =====================================================================
+const VF_REVIEWS = [
+  { author: "Hygienic", platform: "csgorep", rating: 5,
+    text: "Trade went super smooth, quick replies, honest guy! I recommend him to everyone!" },
+
+  { author: "Kieu", platform: "csgorep", rating: 5,
+    text: "Sold my ST Huntsman Knife lore MW 100% would recommend to anyone in need of clear communication quick transaction and safe trading!" },
+
+  { author: "🗿⃤⃢ KING NOTHINGG", platform: "csgorep", rating: 5,
+    text: "Super fast and responsive, great service" },
+
+  { author: "leddy_counterstrike_gamer_69", platform: "csgorep", rating: 5,
+    text: "Ben is one of my go to traders, always fast & reliable! Very grateful" },
+
+  { author: "🗿⃤⃢ KING NOTHINGG", platform: "csgorep", rating: 5,
+    text: "Sold an item and had the money within 15 minutes of first message. GOAT." },
+
+  { author: "C0mplex", platform: "csgorep", rating: 5,
+    text: "10/10 trader and very trustworthy" },
+
+  { author: "Thorben", platform: "csgorep", rating: 5,
+    text: "I sold him a few items from my collection, a super efficient and competent guy. One of the best traders I ever had the pleasure of dealing with." },
+
+  { author: "Mo", platform: "csgorep", rating: 5,
+    text: "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again." },
+
+  // Add Trustpilot reviews like this:
+  // { author: "Jamie M.", platform: "trustpilot", rating: 5, text: "Fast payment, fair price and quick responses." },
 ];
 
-let currentReview = 0;
-const reviewText = document.getElementById("reviewText");
+// Headline numbers shown above the feed — set these to your real totals.
+const VF_OVERALL = "4.9";                               // big rating number
+const VF_TOTAL   = "80+";                               // shown in the subtitle line
+const VF_COUNTS  = { csgorep: null, trustpilot: 80 };   // set csgorep to your real rep count (null shows "—")
 
-function cycleReviews() {
-  reviewText.textContent = reviews[currentReview];
-  currentReview = (currentReview + 1) % reviews.length;
-}
+// ---- vouches feed renderer (no need to edit below here) --------------
+(function () {
+  const grid = document.getElementById("vfGrid");
 
-cycleReviews();
+  const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+  function initialsOf(name) {
+    const words = String(name).replace(/[^A-Za-z\s]/g, " ").trim().split(/\s+/).filter(Boolean);
+    if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
+    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+    return "★";
+  }
+
+  function stars(n) {
+    let out = "";
+    for (let i = 1; i <= 5; i++) out += `<span class="${i <= n ? "on" : "off"}">★</span>`;
+    return out;
+  }
+
+  const AVATARS = ["#00A3A3", "#00B67A", "#4B9CE2", "#8847FF", "#E4AE39", "#EB4B4B"];
+
+  function card(r, i) {
+    const av = AVATARS[i % AVATARS.length];
+    const rating = r.rating || 5;
+    const isTp = r.platform === "trustpilot";
+    const label = isTp ? "Trustpilot" : "CSGORep";
+    const badgeClass = isTp ? "trustpilot" : "csgorep";
+    return `
+      <article class="vf-card" data-platform="${esc(r.platform || "csgorep")}">
+        <div class="vf-card-top">
+          <div class="vf-avatar" style="background:${av}">${esc(initialsOf(r.author))}</div>
+          <div class="vf-who">
+            <div class="vf-name">${esc(r.author)}</div>
+            <div class="vf-card-stars" aria-label="${rating} out of 5">${stars(rating)}</div>
+          </div>
+          <span class="vf-badge ${badgeClass}">${label}</span>
+        </div>
+        <p class="vf-text">${esc(r.text)}</p>
+      </article>`;
+  }
+
+  // headline numbers
+  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
+  set("vfOverall", VF_OVERALL);
+  set("vfTotal", VF_TOTAL);
+  set("vfCrN", VF_COUNTS.csgorep == null ? "—" : VF_COUNTS.csgorep.toLocaleString());
+  set("vfTpN", VF_COUNTS.trustpilot == null ? "—" : VF_COUNTS.trustpilot.toLocaleString());
+
+  // cards + filter
+  if (grid) {
+    const render = filter => {
+      const list = filter === "all" ? VF_REVIEWS : VF_REVIEWS.filter(r => (r.platform || "csgorep") === filter);
+      grid.innerHTML = list.length
+        ? list.map(card).join("")
+        : `<p style="grid-column:1/-1;color:var(--vf-text-mute);font-size:.9rem;margin:4px 2px;">No reviews from here yet.</p>`;
+    };
+    const chips = document.querySelectorAll("#vfFilters .vf-chip");
+    chips.forEach(chip => chip.addEventListener("click", () => {
+      chips.forEach(c => c.setAttribute("aria-pressed", String(c === chip)));
+      render(chip.dataset.filter);
+    }));
+    render("all");
+  }
+
+  // your original rotating review line, now fed from the same list
+  const reviewText = document.getElementById("reviewText");
+  if (reviewText && VF_REVIEWS.length) {
+    let i = 0;
+    const cycle = () => {
+      const r = VF_REVIEWS[i];
+      reviewText.textContent = `${r.text} - ${r.author}`;
+      i = (i + 1) % VF_REVIEWS.length;
+    };
+    cycle();
+    setInterval(cycle, 5000);
+  }
+})();
 setInterval(cycleReviews, 5000);
