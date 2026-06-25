@@ -415,7 +415,8 @@ iframe {
 }
 .vouches * { box-sizing: border-box; }
 
-.vf-head { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.vf-head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.vf-head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
 .vf-rating { display: flex; align-items: baseline; gap: 12px; }
 .vf-rating .num { font-size: 2.8rem; font-weight: 700; line-height: .9; color: var(--vf-text); }
 .vf-rating .stars { font-size: 1.25rem; letter-spacing: 2px; color: var(--vf-star); }
@@ -472,7 +473,7 @@ iframe {
 .vf-verified { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--vf-text-mute); white-space: nowrap; }
 .vf-verified svg { width: 13px; height: 13px; }
 
-.vf-foot { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.vf-foot { margin-top: 22px; display: flex; align-items: center; justify-content: flex-end; gap: 14px; flex-wrap: wrap; }
 .vf-actions { display: flex; gap: 10px; flex-wrap: wrap; }
 .vf-btn { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 600; padding: 9px 16px; border-radius: 8px;
   text-decoration: none; border: 1px solid var(--vf-accent); color: var(--vf-accent); background: transparent;
@@ -490,6 +491,8 @@ iframe {
 }
 @media (max-width: 560px) {
   .vf-rating .num { font-size: 2.3rem; }
+  .vf-head-side { align-items: flex-start; width: 100%; }
+  .vf-foot { justify-content: flex-start; }
 }
 @media (prefers-reduced-motion: reduce) {
   .vf-card, .vf-card::before, .vf-chip { transition: none; }
