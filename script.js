@@ -132,8 +132,9 @@ const VF_REVIEWS = [
   { author: "Mo", platform: "csgorep", rating: 5,
     text: "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again." },
 
-  // Add Trustpilot reviews like this:
-  // { author: "Jamie M.", platform: "trustpilot", rating: 5, text: "Fast payment, fair price and quick responses." },
+  // Add your real Trustpilot reviews here (copy them from your Trustpilot page).
+  // I didn't auto-fill any — fake testimonials would be misleading. Same shape:
+  // { author: "Jordan", platform: "trustpilot", rating: 5, text: "Paste a real review here." },
 ];
 
 // Headline numbers shown above the feed — set these to your real totals.
@@ -189,13 +190,31 @@ const VF_COUNTS  = { csgorep: null, trustpilot: 80 };   // set csgorep to your r
   set("vfCrN", VF_COUNTS.csgorep == null ? "—" : VF_COUNTS.csgorep.toLocaleString());
   set("vfTpN", VF_COUNTS.trustpilot == null ? "—" : VF_COUNTS.trustpilot.toLocaleString());
 
+  // "see all" link target per tab (CSGORep tab points at your profile)
+  const SEE_ALL = {
+    all:        { href: "https://www.trustpilot.com/review/b3n5.uk",      text: "View all reviews" },
+    csgorep:    { href: "https://csgo-rep.com/profile/76561198817596493", text: "See all on CSGORep" },
+    trustpilot: { href: "https://www.trustpilot.com/review/b3n5.uk",      text: "See all on Trustpilot" },
+  };
+  const seeAll = document.getElementById("vfSeeAll");
+  const seeAllText = document.getElementById("vfSeeAllText");
+  const EMPTY = {
+    csgorep:    "No CSGORep reviews added yet.",
+    trustpilot: "No Trustpilot reviews added yet — paste yours into script.js, or use the button above to leave one.",
+    all:        "No reviews yet.",
+  };
+
   // cards + filter
   if (grid) {
     const render = filter => {
       const list = filter === "all" ? VF_REVIEWS : VF_REVIEWS.filter(r => (r.platform || "csgorep") === filter);
       grid.innerHTML = list.length
         ? list.map(card).join("")
-        : `<p style="grid-column:1/-1;color:var(--vf-text-mute);font-size:.9rem;margin:4px 2px;">No reviews from here yet.</p>`;
+        : `<p style="grid-column:1/-1;color:var(--vf-text-mute);font-size:.9rem;margin:4px 2px;">${EMPTY[filter] || EMPTY.all}</p>`;
+      if (seeAll && SEE_ALL[filter]) {
+        seeAll.href = SEE_ALL[filter].href;
+        if (seeAllText) seeAllText.textContent = SEE_ALL[filter].text;
+      }
     };
     const chips = document.querySelectorAll("#vfFilters .vf-chip");
     chips.forEach(chip => chip.addEventListener("click", () => {
@@ -204,18 +223,4 @@ const VF_COUNTS  = { csgorep: null, trustpilot: 80 };   // set csgorep to your r
     }));
     render("all");
   }
-
-  // your original rotating review line, now fed from the same list
-  const reviewText = document.getElementById("reviewText");
-  if (reviewText && VF_REVIEWS.length) {
-    let i = 0;
-    const cycle = () => {
-      const r = VF_REVIEWS[i];
-      reviewText.textContent = `${r.text} - ${r.author}`;
-      i = (i + 1) % VF_REVIEWS.length;
-    };
-    cycle();
-    setInterval(cycle, 5000);
-  }
 })();
-setInterval(cycleReviews, 5000);
