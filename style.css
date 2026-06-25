@@ -472,10 +472,16 @@ iframe {
 .vf-verified { display: inline-flex; align-items: center; gap: 5px; font-size: .68rem; color: var(--vf-text-mute); white-space: nowrap; }
 .vf-verified svg { width: 13px; height: 13px; }
 
-.vf-foot { margin-top: 22px; text-align: center; }
-.vf-foot a { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 600; color: var(--vf-text-dim); text-decoration: none; transition: color .15s; }
-.vf-foot a:hover { color: var(--vf-accent); }
-.vf-foot a svg { width: 14px; height: 14px; }
+.vf-foot { margin-top: 22px; display: flex; align-items: center; justify-content: space-between; gap: 14px; flex-wrap: wrap; }
+.vf-actions { display: flex; gap: 10px; flex-wrap: wrap; }
+.vf-btn { display: inline-flex; align-items: center; gap: 7px; font-size: .8rem; font-weight: 600; padding: 9px 16px; border-radius: 8px;
+  text-decoration: none; border: 1px solid var(--vf-accent); color: var(--vf-accent); background: transparent;
+  transition: background .15s, color .15s; }
+.vf-btn:hover { background: var(--vf-accent); color: var(--vf-accent-ink); }
+.vf-seeall { display: inline-flex; align-items: center; gap: 6px; font-size: .85rem; font-weight: 600; color: var(--vf-text-dim);
+  text-decoration: none; transition: color .15s; white-space: nowrap; }
+.vf-seeall:hover { color: var(--vf-accent); }
+.vf-seeall svg { width: 14px; height: 14px; }
 
 /* keep the feed aligned with your other sections on desktop
    (your layout shifts content right by 300px for the side FAQ) */
