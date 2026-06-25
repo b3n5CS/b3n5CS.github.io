@@ -43,16 +43,22 @@
   <!-- ===== vouches feed : start (styles live in style.css, logic in script.js) ===== -->
   <section class="vouches" aria-label="Customer reviews">
     <div class="vf-head">
-      <div>
+      <div class="vf-head-main">
         <div class="vf-rating">
           <span class="num" id="vfOverall">4.9</span>
           <span class="stars" aria-hidden="true">★★★★★</span>
         </div>
         <p class="vf-subtitle">Based on <b id="vfTotal">80+</b> verified trades</p>
       </div>
-      <div class="vf-platforms">
-        <div class="vf-stat"><div class="n" id="vfCrN">—</div><div class="l cr">CSGORep</div></div>
-        <div class="vf-stat"><div class="n" id="vfTpN">80</div><div class="l tp">Trustpilot</div></div>
+      <div class="vf-head-side">
+        <div class="vf-actions">
+          <a class="vf-btn" href="https://csgo-rep.com/profile/76561198817596493" target="_blank" rel="noopener">Leave a CSGORep review</a>
+          <a class="vf-btn" href="https://www.trustpilot.com/evaluate/b3n5.uk" target="_blank" rel="noopener">Leave a Trustpilot review</a>
+        </div>
+        <div class="vf-platforms">
+          <div class="vf-stat"><div class="n" id="vfCrN">—</div><div class="l cr">CSGORep</div></div>
+          <div class="vf-stat"><div class="n" id="vfTpN">80</div><div class="l tp">Trustpilot</div></div>
+        </div>
       </div>
     </div>
 
@@ -67,10 +73,6 @@
     <div class="vf-grid" id="vfGrid"><!-- cards injected by script.js --></div>
 
     <div class="vf-foot">
-      <div class="vf-actions">
-        <a class="vf-btn" href="https://csgo-rep.com/profile/76561198817596493" target="_blank" rel="noopener">Leave a CSGORep review</a>
-        <a class="vf-btn" href="https://www.trustpilot.com/evaluate/b3n5.uk" target="_blank" rel="noopener">Leave a Trustpilot review</a>
-      </div>
       <a class="vf-seeall" id="vfSeeAll" href="https://www.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener">
         <span id="vfSeeAllText">View all reviews</span>
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
@@ -121,4 +123,5 @@
     });
   </script>
 </body>
+</html>
 </html>
