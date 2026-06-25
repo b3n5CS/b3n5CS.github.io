@@ -132,9 +132,33 @@ const VF_REVIEWS = [
   { author: "Mo", platform: "csgorep", rating: 5,
     text: "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again." },
 
-  // Add your real Trustpilot reviews here (copy them from your Trustpilot page).
-  // I didn't auto-fill any — fake testimonials would be misleading. Same shape:
-  // { author: "Jordan", platform: "trustpilot", rating: 5, text: "Paste a real review here." },
+  // ----- Trustpilot reviews (from your Trustpilot page) -----
+  { author: "EggleIsSmexy", platform: "trustpilot", rating: 5,
+    text: "Great price, and absolutely fantastic experience all round. No faffing about and was happy to cash me out instantly. Highly rate how personable he was too, was more than happy to chat and never made me feel like I was a bother. Would 100% sell to Ben again :)" },
+
+  { author: "Liam", platform: "trustpilot", rating: 5,
+    text: "Fast response and very trustworthy. 0 problems and smooth service would recommend." },
+
+  { author: "Connor McKean", platform: "trustpilot", rating: 5,
+    text: "I sold alot of my skins to ben! he gave me a really good price for them all and I will 100% be coming back to him if i ever need to buy or sell any more!" },
+
+  { author: "Darren Bishop", platform: "trustpilot", rating: 5,
+    text: "Always fast and good rates for instant cash. Would highly recommend!" },
+
+  { author: "Ian", platform: "trustpilot", rating: 5,
+    text: "Quick, easy, fair. Best cashout I've experienced so far in CS" },
+
+  { author: "Gabriel", platform: "trustpilot", rating: 5,
+    text: "Always pleasure working with b3n5, very upfront and active Trader. Everything goes smooth and with 0 problems. Highly recommend for everyone whos willing to trade or sell, I've been customer for quite a bit and have 0 regrets." },
+
+  { author: "Xiao", platform: "trustpilot", rating: 5,
+    text: "Ben answered all my questions and was patient with me along our trade. He is responsive & will finish trades faster than online marketplaces!" },
+
+  { author: "Daniel", platform: "trustpilot", rating: 5,
+    text: "Wanted a skin from Youpin, got it in one minute, quick and easy as always. Can only recommend!!!" },
+
+  { author: "Not Here", platform: "trustpilot", rating: 5,
+    text: "He was super fast and very understanding with everything, I sold him both my knives and got paid like 1-2 minutes after I sent the trade. And very cool guy as well" },
 ];
 
 // Headline numbers shown above the feed — set these to your real totals.
@@ -206,8 +230,19 @@ const VF_COUNTS  = { csgorep: null, trustpilot: 80 };   // set csgorep to your r
 
   // cards + filter
   if (grid) {
+    // alternate platforms on the All tab so it's a mix, not grouped
+    const interleave = arr => {
+      const cr = arr.filter(r => (r.platform || "csgorep") === "csgorep");
+      const tp = arr.filter(r => r.platform === "trustpilot");
+      const out = []; let i = 0, j = 0;
+      while (i < cr.length || j < tp.length) {
+        if (i < cr.length) out.push(cr[i++]);
+        if (j < tp.length) out.push(tp[j++]);
+      }
+      return out;
+    };
     const render = filter => {
-      const list = filter === "all" ? VF_REVIEWS : VF_REVIEWS.filter(r => (r.platform || "csgorep") === filter);
+      const list = filter === "all" ? interleave(VF_REVIEWS) : VF_REVIEWS.filter(r => (r.platform || "csgorep") === filter);
       grid.innerHTML = list.length
         ? list.map(card).join("")
         : `<p style="grid-column:1/-1;color:var(--vf-text-mute);font-size:.9rem;margin:4px 2px;">${EMPTY[filter] || EMPTY.all}</p>`;
