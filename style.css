@@ -408,12 +408,16 @@ iframe {
   --vf-text-mute: #9A9A9A;
 
   max-width: 90%;
-  margin: 30px auto;
+  margin: 10px auto 30px;
   text-align: left;
   font-family: 'Poppins', sans-serif;
   color: var(--vf-text);
 }
 .vouches * { box-sizing: border-box; }
+
+/* tighten the gap above the feed so it sits up closer to your stats
+   (fills the space the old Trustpilot logo button used to take) */
+.stats-container { margin-bottom: 16px; }
 
 .vf-head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 .vf-head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
