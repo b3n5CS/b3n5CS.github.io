@@ -229,12 +229,20 @@ iframe {
   border-radius: 8px;
 }
 
-/* Desktop FAQ Positioning */
+/* Desktop sidebar (FAQ + Get started) positioning */
 @media (min-width: 769px) {
-  .faq-section {
+  .sidebar {
     position: absolute;
     top: 100px;
     left: 20px;
+    width: 300px;
+    margin: 0;
+  }
+
+  .faq-section {
+    position: static;
+    width: auto;
+    max-width: none;
     margin: 0;
   }
 
@@ -514,4 +522,29 @@ iframe {
 @media (prefers-reduced-motion: reduce) {
   .vf-card, .vf-card::before, .vf-chip { transition: none; }
 }
+
+/* section heading above the review cards */
+.vf-heading { font-size: 1.15rem; font-weight: 600; color: var(--vf-text); margin: 0 0 14px; }
 /* === vouches feed : end === */
+
+/* ===== Sidebar "Get started" card (under the FAQ) ===== */
+.side-cta {
+  background: #2A2A2A;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-top: 16px;
+  text-align: left;
+}
+.side-cta h3 { font-size: 1.1rem; font-weight: 600; color: #FFFFFF; margin: 0 0 8px; }
+.side-cta p { font-size: 0.85rem; font-weight: 400; color: #CCCCCC; line-height: 1.5; margin: 0 0 14px; }
+.side-cta-btn {
+  display: block; text-align: center; text-decoration: none;
+  background: #00A3A3; color: #0E1414; font-weight: 600; font-size: 0.9rem;
+  padding: 11px 14px; border-radius: 6px; transition: background 0.15s ease;
+}
+.side-cta-btn:hover { background: #00BDBD; }
+.side-cta-alt {
+  display: block; text-align: center; text-decoration: none;
+  margin-top: 10px; font-size: 0.8rem; color: #CCCCCC; transition: color 0.15s ease;
+}
+.side-cta-alt:hover { color: #00A3A3; }
