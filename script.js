@@ -93,169 +93,80 @@ function animate() {
 animate();
 
 // =====================================================================
-// REVIEWS  —  single source of truth.
-// This one list powers BOTH your rotating review line (#reviewText) and
-// the new vouches feed cards, so you only edit reviews in one place.
-//
-// Fields:
-//   author    the name shown on the card / line
-//   platform  "csgorep" | "trustpilot"  (controls the badge + filter tab)
-//   rating    1–5  (defaults to 5 if left out)
-//   text      the review itself
-//
-// NOTE: I tagged your existing reviews as "csgorep" because the usernames
-// look like Steam profiles. Change any that came from Trustpilot, and add
-// new Trustpilot reviews using the commented example at the bottom.
+// REVIEWS — a mix of real CSGORep + Trustpilot reviews (no platform tag).
+// The top card rotates through these, and a few more fan out when you
+// hover (or tap) the stack. Edit / add / remove freely.
+//   author — the name shown on the card
+//   text   — the review itself
+//   rating — optional, defaults to 5
 // =====================================================================
 const VF_REVIEWS = [
-  { author: "Hygienic", platform: "csgorep", rating: 5,
-    text: "Trade went super smooth, quick replies, honest guy! I recommend him to everyone!" },
-
-  { author: "Kieu", platform: "csgorep", rating: 5,
-    text: "Sold my ST Huntsman Knife lore MW 100% would recommend to anyone in need of clear communication quick transaction and safe trading!" },
-
-  { author: "🗿⃤⃢ KING NOTHINGG", platform: "csgorep", rating: 5,
-    text: "Super fast and responsive, great service" },
-
-  { author: "leddy_counterstrike_gamer_69", platform: "csgorep", rating: 5,
-    text: "Ben is one of my go to traders, always fast & reliable! Very grateful" },
-
-  { author: "🗿⃤⃢ KING NOTHINGG", platform: "csgorep", rating: 5,
-    text: "Sold an item and had the money within 15 minutes of first message. GOAT." },
-
-  { author: "C0mplex", platform: "csgorep", rating: 5,
-    text: "10/10 trader and very trustworthy" },
-
-  { author: "Thorben", platform: "csgorep", rating: 5,
-    text: "I sold him a few items from my collection, a super efficient and competent guy. One of the best traders I ever had the pleasure of dealing with." },
-
-  { author: "Mo", platform: "csgorep", rating: 5,
-    text: "Bought my mw smokeout gloves, the whole transaction was quick, safe and would 100% do it again." },
-
-  // ----- Trustpilot reviews (from your Trustpilot page) -----
-  { author: "EggleIsSmexy", platform: "trustpilot", rating: 5,
-    text: "Great price, and absolutely fantastic experience all round. No faffing about and was happy to cash me out instantly. Highly rate how personable he was too, was more than happy to chat and never made me feel like I was a bother. Would 100% sell to Ben again :)" },
-
-  { author: "Liam", platform: "trustpilot", rating: 5,
-    text: "Fast response and very trustworthy. 0 problems and smooth service would recommend." },
-
-  { author: "Connor McKean", platform: "trustpilot", rating: 5,
-    text: "I sold alot of my skins to ben! he gave me a really good price for them all and I will 100% be coming back to him if i ever need to buy or sell any more!" },
-
-  { author: "Darren Bishop", platform: "trustpilot", rating: 5,
-    text: "Always fast and good rates for instant cash. Would highly recommend!" },
-
-  { author: "Ian", platform: "trustpilot", rating: 5,
-    text: "Quick, easy, fair. Best cashout I've experienced so far in CS" },
-
-  { author: "Gabriel", platform: "trustpilot", rating: 5,
-    text: "Always pleasure working with b3n5, very upfront and active Trader. Everything goes smooth and with 0 problems. Highly recommend for everyone whos willing to trade or sell, I've been customer for quite a bit and have 0 regrets." },
-
-  { author: "Xiao", platform: "trustpilot", rating: 5,
-    text: "Ben answered all my questions and was patient with me along our trade. He is responsive & will finish trades faster than online marketplaces!" },
-
-  { author: "Daniel", platform: "trustpilot", rating: 5,
-    text: "Wanted a skin from Youpin, got it in one minute, quick and easy as always. Can only recommend!!!" },
-
-  { author: "Not Here", platform: "trustpilot", rating: 5,
-    text: "He was super fast and very understanding with everything, I sold him both my knives and got paid like 1-2 minutes after I sent the trade. And very cool guy as well" },
+  { author: "Jay Baptist", text: "Honest and straightforward guy! Willing to answer questions and be transparent with new sellers. Appreciate the easy sale and zero hassle!" },
+  { author: "Aidan Oconnor", text: "Have done many transactions with him totaling to over 5k, very trustworthy and chill dude" },
+  { author: "Gus", text: "Cashed out gloves and knife, very smooth and easy — would recommend" },
+  { author: "Geo", text: "Quick response, fast price up on a lot of items and very trustworthy." },
+  { author: "Roy OZO", text: "Just sold my survival tiger tooth to this lad and trade went super smooth. Did not try to lowball or anything, fair prices only. Would 100% recommend to anyone selling skins, he's a lovely lad" },
+  { author: "Andrew", text: "He was quick to answer and made the transaction smooth and fast. Makes selling CS2 skins an easy method for cashouts" },
+  { author: "Alex", text: "One of the best CS2 traders out there. Fast and reliable. Can't go wrong with him" },
+  { author: "SeveralSports", text: "Great communication, clear about pricing and reasoning for it. Even though it was cheaper items, still felt like I was a priority! Awesome guy! If you want to trade, go with this guy!!" },
+  { author: "Samuel Gradel", text: "Instant cash and great response times! Good prices and a swift transaction let me secure a time-sensitive deal. Super convenient and trustworthy trader 🩶" },
+  { author: "James Martin", text: "Wanted to cash out my whole inventory and my friend recommended Ben — I can say it was a seamless and easy process, will definitely be using again" },
+  { author: ">.<", text: "Sold talon fade FN, my guy and my goat trader, always sorts out soon as he can. Thanks again brother" },
+  { author: "KS2God", text: "$3,700 by bank wire. Absolute GOAT — fast and reliable. You can't go wrong with this guy" },
 ];
 
-// Headline numbers shown above the feed — set these to your real totals.
-const VF_OVERALL = "4.9";                               // big rating number
-const VF_TOTAL   = "80+";                               // shown in the subtitle line
-const VF_COUNTS  = { csgorep: 152, trustpilot: 80 };   // set csgorep to your real rep count (null shows "—")
-
-// ---- vouches feed renderer (no need to edit below here) --------------
+// ---- review deck: one card on top, a few fan out on hover/tap ----------
 (function () {
-  const grid = document.getElementById("vfGrid");
+  const deck = document.getElementById("vfDeck");
+  if (!deck) return;
+
+  const stackEl = deck.querySelector(".vf-deck-stack");
+  const moreEl = deck.querySelector(".vf-deck-more");
+  if (!stackEl || !moreEl) return;
+
+  const MORE = 4;          // how many extra reviews fan out
+  const ROTATE_MS = 5000;  // how often the top card changes
 
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-
-  function initialsOf(name) {
-    const words = String(name).replace(/[^A-Za-z\s]/g, " ").trim().split(/\s+/).filter(Boolean);
-    if (words.length >= 2) return (words[0][0] + words[1][0]).toUpperCase();
-    if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  const initialsOf = name => {
+    const w = String(name).replace(/[^A-Za-z\s]/g, " ").trim().split(/\s+/).filter(Boolean);
+    if (w.length >= 2) return (w[0][0] + w[1][0]).toUpperCase();
+    if (w.length === 1) return w[0].slice(0, 2).toUpperCase();
     return "★";
-  }
-
-  function stars(n) {
-    let out = "";
-    for (let i = 1; i <= 5; i++) out += `<span class="${i <= n ? "on" : "off"}">★</span>`;
-    return out;
-  }
-
+  };
+  const stars = n => { let o = ""; for (let k = 0; k < 5; k++) o += `<span class="${k < n ? "on" : "off"}">★</span>`; return o; };
   const AVATARS = ["#00A3A3", "#00B67A", "#4B9CE2", "#8847FF", "#E4AE39", "#EB4B4B"];
 
-  function card(r, i) {
-    const av = AVATARS[i % AVATARS.length];
-    const rating = r.rating || 5;
-    const isTp = r.platform === "trustpilot";
-    const label = isTp ? "Trustpilot" : "CSGORep";
-    const badgeClass = isTp ? "trustpilot" : "csgorep";
-    return `
-      <article class="vf-card" data-platform="${esc(r.platform || "csgorep")}">
-        <div class="vf-card-top">
-          <div class="vf-avatar" style="background:${av}">${esc(initialsOf(r.author))}</div>
-          <div class="vf-who">
-            <div class="vf-name">${esc(r.author)}</div>
-            <div class="vf-card-stars" aria-label="${rating} out of 5">${stars(rating)}</div>
-          </div>
-          <span class="vf-badge ${badgeClass}">${label}</span>
+  const cardHTML = (r, idx) => `
+    <article class="vf-rev">
+      <div class="vf-rev-top">
+        <div class="vf-avatar" style="background:${AVATARS[idx % AVATARS.length]}">${esc(initialsOf(r.author))}</div>
+        <div class="vf-who">
+          <div class="vf-name">${esc(r.author)}</div>
+          <div class="vf-card-stars" aria-label="${r.rating || 5} out of 5">${stars(r.rating || 5)}</div>
         </div>
-        <p class="vf-text">${esc(r.text)}</p>
-      </article>`;
+      </div>
+      <p class="vf-text">${esc(r.text)}</p>
+    </article>`;
+
+  let i = 0;
+  const n = VF_REVIEWS.length;
+
+  function render() {
+    stackEl.innerHTML = cardHTML(VF_REVIEWS[i % n], i);
+    let more = "";
+    for (let k = 1; k <= Math.min(MORE, n - 1); k++) more += cardHTML(VF_REVIEWS[(i + k) % n], i + k);
+    moreEl.innerHTML = more;
   }
+  render();
 
-  // headline numbers
-  const set = (id, val) => { const el = document.getElementById(id); if (el) el.textContent = val; };
-  set("vfOverall", VF_OVERALL);
-  set("vfTotal", VF_TOTAL);
-  set("vfCrN", VF_COUNTS.csgorep == null ? "—" : VF_COUNTS.csgorep.toLocaleString());
-  set("vfTpN", VF_COUNTS.trustpilot == null ? "—" : VF_COUNTS.trustpilot.toLocaleString());
+  // rotate the top card, paused while hovering or expanded
+  let hovering = false, open = false, paused = false;
+  const sync = () => { paused = hovering || open; };
+  setInterval(() => { if (!paused) { i = (i + 1) % n; render(); } }, ROTATE_MS);
 
-  // "see all" link target per tab (CSGORep tab points at your profile)
-  const SEE_ALL = {
-    all:        { href: "https://www.trustpilot.com/review/b3n5.uk",      text: "View all reviews" },
-    csgorep:    { href: "https://csgo-rep.com/profile/76561198817596493", text: "See all on CSGORep" },
-    trustpilot: { href: "https://www.trustpilot.com/review/b3n5.uk",      text: "See all on Trustpilot" },
-  };
-  const seeAll = document.getElementById("vfSeeAll");
-  const seeAllText = document.getElementById("vfSeeAllText");
-  const EMPTY = {
-    csgorep:    "No CSGORep reviews added yet.",
-    trustpilot: "No Trustpilot reviews added yet — paste yours into script.js, or use the button above to leave one.",
-    all:        "No reviews yet.",
-  };
-
-  // cards + filter
-  if (grid) {
-    // alternate platforms on the All tab so it's a mix, not grouped
-    const interleave = arr => {
-      const cr = arr.filter(r => (r.platform || "csgorep") === "csgorep");
-      const tp = arr.filter(r => r.platform === "trustpilot");
-      const out = []; let i = 0, j = 0;
-      while (i < cr.length || j < tp.length) {
-        if (i < cr.length) out.push(cr[i++]);
-        if (j < tp.length) out.push(tp[j++]);
-      }
-      return out;
-    };
-    const render = filter => {
-      const list = filter === "all" ? interleave(VF_REVIEWS) : VF_REVIEWS.filter(r => (r.platform || "csgorep") === filter);
-      grid.innerHTML = list.length
-        ? list.map(card).join("")
-        : `<p style="grid-column:1/-1;color:var(--vf-text-mute);font-size:.9rem;margin:4px 2px;">${EMPTY[filter] || EMPTY.all}</p>`;
-      if (seeAll && SEE_ALL[filter]) {
-        seeAll.href = SEE_ALL[filter].href;
-        if (seeAllText) seeAllText.textContent = SEE_ALL[filter].text;
-      }
-    };
-    const chips = document.querySelectorAll("#vfFilters .vf-chip");
-    chips.forEach(chip => chip.addEventListener("click", () => {
-      chips.forEach(c => c.setAttribute("aria-pressed", String(c === chip)));
-      render(chip.dataset.filter);
-    }));
-    render("all");
-  }
+  deck.addEventListener("mouseenter", () => { hovering = true; sync(); });
+  deck.addEventListener("mouseleave", () => { hovering = false; sync(); });
+  // tap to expand on touch devices
+  deck.addEventListener("click", () => { open = !open; deck.classList.toggle("open", open); sync(); });
 })();
