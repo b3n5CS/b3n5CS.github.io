@@ -39,16 +39,21 @@
   <section class="vouches" aria-label="Reviews">
     <div class="vf-head">
 
-      <!-- Trustpilot TrustBox (Mini) — shows your live TrustScore, stars & review count. -->
-      <div class="trustpilot-widget vf-tp-widget"
-           data-locale="en-GB"
-           data-template-id="53aa8807dec7e10d38f59f32"
-           data-businessunit-id="6836dd98fe7a18bd7cb412d9"
-           data-style-height="130px"
-           data-style-width="100%"
-           data-theme="dark">
-        <a href="https://uk.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener">Trustpilot</a>
-      </div>
+      <!-- Trust badge — your real Trustpilot rating, linking to your profile to verify.
+           Self-hosted (no Trustpilot plan/script needed). Update the score/count
+           in the two places marked below whenever your Trustpilot rating changes. -->
+      <a class="vf-tp-badge" href="https://uk.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener"
+         aria-label="Rated 4.9 out of 5, Excellent, on Trustpilot. Read the reviews.">
+        <span class="vf-tp-word">Excellent</span>
+        <span class="vf-tp-stars" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i>
+        </span>
+        <span class="vf-tp-meta"><b>4.9</b> out of 5<span class="vf-tp-dot">•</span>80+ reviews</span>
+        <span class="vf-tp-brand">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2l2.9 6.9 7.1.6-5.4 4.6 1.7 7-6.3-3.8-6.3 3.8 1.7-7L.9 9.5l7.1-.6z"/></svg>
+          Trustpilot
+        </span>
+      </a>
 
       <div class="vf-actions">
         <a class="vf-btn" href="https://csgo-rep.com/profile/76561198817596493" target="_blank" rel="noopener">Leave a CSGORep review</a>
@@ -100,7 +105,5 @@
       });
     });
   </script>
-  <!-- Trustpilot TrustBox loader (powers the widget above) -->
-  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 </body>
 </html>
