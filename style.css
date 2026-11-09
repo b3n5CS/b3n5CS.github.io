@@ -419,8 +419,10 @@ iframe {
    (fills the space the old Trustpilot logo button used to take) */
 .stats-container { margin-bottom: 16px; }
 
-.vf-head { display: flex; align-items: flex-start; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
+.vf-head { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px; }
 .vf-head-side { display: flex; flex-direction: column; align-items: flex-end; gap: 12px; }
+/* Trustpilot TrustBox sizing — sits on the left, buttons on the right */
+.vf-tp-widget { flex: 1 1 300px; min-width: 240px; max-width: 420px; }
 .vf-rating { display: flex; align-items: baseline; gap: 12px; }
 .vf-rating .num { font-size: 2.8rem; font-weight: 700; line-height: .9; color: var(--vf-text); }
 .vf-rating .stars { font-size: 1.25rem; letter-spacing: 2px; color: var(--vf-star); }
