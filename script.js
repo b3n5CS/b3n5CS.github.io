@@ -111,6 +111,12 @@ const VF_REVIEWS = [
   { author: "SeveralSports", text: "Great communication, clear about pricing and reasoning for it. Even though it was cheaper items, still felt like I was a priority! Awesome guy! If you want to trade, go with this guy!!" },
   { author: "Samuel Gradel", text: "Instant cash and great response times! Good prices and a swift transaction let me secure a time-sensitive deal. Super convenient and trustworthy trader 🩶" },
   { author: "James Martin", text: "Wanted to cash out my whole inventory and my friend recommended Ben — I can say it was a seamless and easy process, will definitely be using again" },
+  { author: "Oliver Froud", text: "Incredible trader! Fast payment! Highly recommend!" },
+  { author: "Akvile", text: "Sold a couple of knives — always very talkative and very fast. Really a good guy" },
+  { author: "rampire", text: "Very smooth transaction, easy to talk to and agree on deals with." },
+  { author: "Mate", text: "Sold him a Flip Knife, went first, got paid in a few mins" },
+  { author: "Charlie Chandley", text: "Seamless and fast, decent prices — my go-to for cashing out" },
+  { author: "Arturs Rudans", text: "Sold a knife and gloves to him, took no time to respond and send the money almost immediately. Good prices, good communication. I recommend Ben every time." },
   { author: ">.<", text: "Sold talon fade FN, my guy and my goat trader, always sorts out soon as he can. Thanks again brother" },
   { author: "KS2God", text: "$3,700 by bank wire. Absolute GOAT — fast and reliable. You can't go wrong with this guy" },
 ];
@@ -121,11 +127,11 @@ const VF_REVIEWS = [
   if (!deck) return;
 
   const stackEl = deck.querySelector(".vf-deck-stack");
-  const moreEl = deck.querySelector(".vf-deck-more");
+  const moreEl = deck.querySelector(".vf-deck-grid");
   if (!stackEl || !moreEl) return;
 
-  const MORE = 4;          // how many extra reviews fan out
-  const ROTATE_MS = 5000;  // how often the top card changes
+  const MORE = 6;          // how many extra reviews spread out in the grid
+  const ROTATE_MS = 5000;  // how often the feature card changes
 
   const esc = s => String(s).replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const initialsOf = name => {
