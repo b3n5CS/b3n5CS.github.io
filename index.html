@@ -35,46 +35,33 @@
     </div>
   </div>
 
-  <!-- ===== vouches feed : start (styles live in style.css, logic in script.js) ===== -->
-  <section class="vouches" aria-label="Customer reviews">
+  <!-- ===== reviews : start ===== -->
+  <section class="vouches" aria-label="Reviews">
     <div class="vf-head">
-      <div class="vf-head-main">
-        <div class="vf-rating">
-          <span class="num" id="vfOverall">4.9</span>
-          <span class="stars" aria-hidden="true">★★★★★</span>
-        </div>
-        <p class="vf-subtitle">Based on <b id="vfTotal">80+</b> verified trades</p>
+
+      <!-- Trustpilot TrustBox (Mini) — shows your live TrustScore, stars & review count.
+           ONE thing to do: replace YOUR_BUSINESS_UNIT_ID below with your real ID.
+           Get it free: trustpilot.com/business  →  Integrations  →  TrustBox  →
+           pick "Mini", and the ID is baked into the snippet it gives you
+           (a 24-character code like 5f1a2b3c4d5e6f7a8b9c0d1e). -->
+      <div class="trustpilot-widget vf-tp-widget"
+           data-locale="en-GB"
+           data-template-id="53aa8807dec7e10d38f59f32"
+           data-businessunit-id="YOUR_BUSINESS_UNIT_ID"
+           data-style-height="130px"
+           data-style-width="100%"
+           data-theme="dark">
+        <a href="https://uk.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener">Trustpilot</a>
       </div>
-      <div class="vf-head-side">
-        <div class="vf-platforms">
-          <div class="vf-stat"><div class="n" id="vfCrN">—</div><div class="l cr">CSGORep</div></div>
-          <div class="vf-stat"><div class="n" id="vfTpN">80</div><div class="l tp">Trustpilot</div></div>
-        </div>
-        <div class="vf-actions">
-          <a class="vf-btn" href="https://csgo-rep.com/profile/76561198817596493" target="_blank" rel="noopener">Leave a CSGORep review</a>
-          <a class="vf-btn" href="https://www.trustpilot.com/evaluate/b3n5.uk" target="_blank" rel="noopener">Leave a Trustpilot review</a>
-        </div>
+
+      <div class="vf-actions">
+        <a class="vf-btn" href="https://csgo-rep.com/profile/76561198817596493" target="_blank" rel="noopener">Leave a CSGORep review</a>
+        <a class="vf-btn" href="https://www.trustpilot.com/evaluate/b3n5.uk" target="_blank" rel="noopener">Leave a Trustpilot review</a>
       </div>
-    </div>
 
-    <hr class="vf-rule">
-
-    <div class="vf-filters" id="vfFilters" role="group" aria-label="Filter reviews by platform">
-      <button class="vf-chip" data-filter="all" aria-pressed="true">All reviews</button>
-      <button class="vf-chip" data-filter="csgorep" aria-pressed="false">CSGORep</button>
-      <button class="vf-chip" data-filter="trustpilot" aria-pressed="false">Trustpilot</button>
-    </div>
-
-    <div class="vf-grid" id="vfGrid"><!-- cards injected by script.js --></div>
-
-    <div class="vf-foot">
-      <a class="vf-seeall" id="vfSeeAll" href="https://www.trustpilot.com/review/b3n5.uk" target="_blank" rel="noopener">
-        <span id="vfSeeAllText">View all reviews</span>
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M9 7h8v8"/></svg>
-      </a>
     </div>
   </section>
-  <!-- ===== vouches feed : end ===== -->
+  <!-- ===== reviews : end ===== -->
 
   <div class="faq-section">
     <h2>FAQ</h2>
@@ -117,5 +104,7 @@
       });
     });
   </script>
+  <!-- Trustpilot TrustBox loader (powers the widget above) -->
+  <script type="text/javascript" src="//widget.trustpilot.com/bootstrap/v5/tp.widget.bootstrap.min.js" async></script>
 </body>
 </html>
