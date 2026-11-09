@@ -200,6 +200,20 @@ p {
   user-select: none;
 }
 
+/* Keep interactive content above the drifting skins (z-index:1) so the skins
+   stay as background decoration and don't steal hovers/clicks. */
+header,
+.social-icons,
+.stats-container,
+.trade-cta,
+#inventory,
+.vouches,
+.sidebar,
+.faq-section {
+  position: relative;
+  z-index: 2;
+}
+
 /* Button Styles */
 .button {
   padding: 12px 20px;
@@ -571,24 +585,24 @@ iframe {
 /* ===== "Ready to trade" bar — centered below the stat boxes ===== */
 .trade-cta {
   max-width: 640px; margin: 22px auto 0;
-  background: #2A2A2A; border-radius: 8px; padding: 18px 22px;
-  display: flex; align-items: center; justify-content: space-between; gap: 20px;
-  flex-wrap: wrap; text-align: left;
+  background: #2A2A2A; border-radius: 8px; padding: 18px 22px; text-align: left;
 }
+.trade-cta-row { display: flex; align-items: center; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
 .trade-cta-text { flex: 1 1 260px; }
 .trade-cta-text h3 { font-size: 1.15rem; font-weight: 600; color: #FFFFFF; margin: 0 0 4px; }
 .trade-cta-text p { font-size: 0.85rem; font-weight: 400; color: #CCCCCC; line-height: 1.5; margin: 0; }
-.trade-cta-actions { display: flex; flex-direction: column; align-items: stretch; gap: 7px; }
 .trade-cta-btn {
   text-align: center; text-decoration: none; white-space: nowrap;
   background: #00A3A3; color: #0E1414; font-weight: 600; font-size: 0.9rem;
-  padding: 11px 20px; border-radius: 6px; transition: background 0.15s ease;
+  padding: 11px 22px; border-radius: 6px; transition: background 0.15s ease;
 }
 .trade-cta-btn:hover { background: #00BDBD; }
-.trade-cta-alt { text-align: center; text-decoration: none; font-size: 0.78rem; color: #CCCCCC; transition: color 0.15s ease; }
-.trade-cta-alt:hover { color: #00A3A3; }
+.trade-cta-alt { margin: 14px 0 0; font-size: 0.8rem; color: #CCCCCC; line-height: 1.5; }
+.trade-cta-alt a { color: #CCCCCC; text-decoration: underline; transition: color 0.15s ease; }
+.trade-cta-alt a:hover { color: #00A3A3; }
 
 @media (max-width: 768px) {
-  .trade-cta { flex-direction: column; align-items: stretch; text-align: center; }
-  .trade-cta-actions { align-items: stretch; }
+  .trade-cta-row { flex-direction: column; align-items: stretch; text-align: center; }
+  .trade-cta-text { flex: none; }
+  .trade-cta-alt { text-align: center; }
 }
